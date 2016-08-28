@@ -6,13 +6,12 @@
         <a class="btn btn-primary pull-right" href="{{ URL::previous() }}">Go Back</a>
         {!! Form::open(['url' => 'stocks']) !!}
             <div class="form-group">
-                    {!! Form::select('customer_id', $customers) !!}
-        
-                <!-- @if(Auth::user()->email == 'admin@admin.com') -->
-        <!-- 
-                        @else
-        {!! Form::select('customer_id', [Session::get("login_name")]) !!}
-                        @endif -->
+            <?php $hash = array(Session::get("login_id")=>Session::get("login_name")); ?>
+            @if(Auth::user()->email == 'admin@admin.com')
+                {!! Form::select('customer_id', $customers) !!}
+            @else
+                {!! Form::select('customer_id', $hash) !!}
+            @endif
             </div>
             <div class="form-group{{ $errors->has('symbol') ? ' has-error has-feedback' : '' }}">
                 {!! Form::label('symbol', 'Symbol:') !!}
