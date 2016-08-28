@@ -6,11 +6,11 @@
         <a class="btn btn-primary pull-right" href="{{ URL::previous() }}">Go Back</a>
         {!! Form::open(['url' => 'investments']) !!}
             <div class="form-group">
-                @if(Auth::user()->email == 'admin@admin.com')
                     {!! Form::select('customer_id', $customers) !!}
+                <!-- @if(Auth::user()->email == 'admin@admin.com')
                 @else
                     {!! Form::select('customer_id', [Session::get("login_name")]) !!}
-                @endif
+                @endif -->
             </div>
             <div class="form-group {{ $errors->has('category') ? ' has-error has-feedback' : '' }}">
                 {!! Form::label('category', 'Category:') !!}
