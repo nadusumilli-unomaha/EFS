@@ -20,7 +20,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | SMTP Host Address
+    | SMTP Host Addressx
     |--------------------------------------------------------------------------
     |
     | Here you may provide the host address of the SMTP server used by your
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        'address' => 'nikhitadusumilli@gmail.com',
+        'name' => 'Nikhit',
     ],
 
     /*

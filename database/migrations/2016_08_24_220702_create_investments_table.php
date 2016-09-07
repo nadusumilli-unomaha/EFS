@@ -27,7 +27,6 @@ class CreateInvestmentsTable extends Migration
         });
 
         Schema::table('investments', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
 

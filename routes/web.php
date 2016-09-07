@@ -22,3 +22,7 @@ Route::resource('customers','CustomerController');
 Route::resource('stocks','StockController');
 Route::resource('investments','InvestmentController');
 Route::get('/home', 'HomeController@index');
+
+Route::any('.*', function () {
+    return view('welcome');
+});
