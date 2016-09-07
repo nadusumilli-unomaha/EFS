@@ -44,7 +44,7 @@ class StockController extends Controller
     public function create()
     {
       if(Auth::check()){
-        $customers = DB::table('customers')->pluck('name','id');
+        $customers = Customer::pluck('name','id');
         return view('stocks.create', compact('customers'));
       }
       else{

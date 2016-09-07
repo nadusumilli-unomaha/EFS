@@ -44,7 +44,7 @@ class InvestmentController extends Controller
     public function create()
     {
       if(Auth::check()){
-        $customers = DB::table('customers')->pluck('name','id');
+        $customers = Customer::pluck('name','id');
         return view('investments.create', compact('customers'));
       }
       else{
