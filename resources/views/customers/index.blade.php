@@ -19,7 +19,7 @@
     <!-- A Customer table that displays all the customers and their information. -->
     <div class="container">
         @if(Session::has("cust_edit_msg"))
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" id="message">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
               <strong>Danger!</strong> {{Session::get("cust_edit_msg")}}
             </div>
@@ -65,7 +65,7 @@
                         <td><a href="{{url('customers',$customer->id)}}" class="btn btn-primary">Read</a></td>
                         <td><a href="{{route('customers.edit',$customer->id)}}" class="btn btn-warning">Update</a></td>
                         <td>
-                            {!! Form::open(['method' => 'DELETE', 'route'=>['customers.destroy', $customer->id]]) !!}
+                            {!! Form::open(['method' => 'DELETE', 'route'=>['customers.destroy', $customer->id], 'onSubmit'=> 'if(!confirm("Deleting the customer will delete all stocks and investments relating to the customer\n\nAre you Sure you want to delete the customer?")){return false;}'])!!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>

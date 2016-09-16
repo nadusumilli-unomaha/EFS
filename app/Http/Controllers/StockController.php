@@ -64,7 +64,7 @@ class StockController extends Controller
         'name' => 'required',
         'shares' => 'required|numeric',
         'purchase_price' => 'required|numeric',
-        'purchased' => 'required'
+        'purchased' => 'required|date_format:Y/m/d'
       ]);
       $stock= new Stock($request->all());
       $stock->save();

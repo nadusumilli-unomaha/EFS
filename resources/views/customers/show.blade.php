@@ -4,7 +4,7 @@
     <!-- A table that shows detailed informaiton of a particular customer. -->
     <div class="container">
         @if(Session::has("stock_succcess_created"))
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="message">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
               <strong>Success!</strong> {{Session::get("stock_succcess_created")}}
             </div>
