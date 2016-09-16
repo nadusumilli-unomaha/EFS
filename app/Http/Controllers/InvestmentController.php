@@ -77,7 +77,7 @@ class InvestmentController extends Controller
     {
       if(Auth::check()){
         $investment=Investment::find($id);
-        if(Session::get("login_id") == $investment['customer_id']){
+        if(Session::get("login_id") == $investment['customer_id'] || Auth::user()->email == 'admin@admin.com'){
           return view('investments.edit',compact('investment'));
         }
         else{

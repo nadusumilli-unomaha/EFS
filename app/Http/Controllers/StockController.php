@@ -78,7 +78,7 @@ class StockController extends Controller
       if(Auth::check())
       {
           $stock=Stock::find($id);
-          if(Session::get("login_id") == $stock['customer_id']){
+          if(Session::get("login_id") == $stock['customer_id'] || Auth::user()->email == 'admin@admin.com'){
             return view('stocks.edit',compact('stock'));
           }
           else{
