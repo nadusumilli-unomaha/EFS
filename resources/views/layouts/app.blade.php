@@ -20,6 +20,15 @@
 </head>
 <body>
     <!-- Styles -->
+    <style type="text/css">
+        body {
+                background: url("https://www.rolandberger.com/img/Background-Folder/Backgrounds/financial_services_quote_background_new_background_stage_tablet.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+        }
+    </style>
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -81,7 +90,6 @@
             </div>
         </div>
     </nav>
-
     @yield('content')
 
 </body>

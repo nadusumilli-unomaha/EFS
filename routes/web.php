@@ -26,3 +26,11 @@ Route::get('/home', 'HomeController@index');
 Route::any('.*', function () {
     return view('welcome');
 });
+
+Route::get('/customers/{any}', function ($any) {
+    return view('welcome');
+})->where('any', '.*');
+
+Route::get('/{any}', function ($any) {
+  return view('welcome');
+})->where('any', '.*');

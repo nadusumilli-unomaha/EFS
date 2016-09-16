@@ -157,6 +157,46 @@
         </table>
 
         <!-- A table that shows the total protfolio values and profits relating to the selected customer. -->
+        <h2>{{$customer['name']}}'s Stock Portfolio</h2>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr class="bg-info">
+                    <th>Todays Date.</th>
+                    <th>Total Stock value.</th>
+                    <th>Total Stock Profit Value</th>
+                </tr>
+            </thead>
+            <tbody>                
+                <tr>
+                    <td><?php echo date('Y/m/d'); echo ','.date('l') ?>
+                    </td>
+                    <td>{{ $TotalStockValue }}$</td>
+                    <td>{{ $TotalGainorLoss }}$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- A table that shows the total protfolio values and profits relating to the selected customer. -->
+        <h2>{{$customer['name']}}'s Investment Portfolio</h2>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr class="bg-info">
+                    <th>Todays Date.</th>
+                    <th>Total Investment value.</th>
+                    <th>Total Investment Profit Value</th>
+                </tr>
+            </thead>
+            <tbody>                
+                <tr>
+                    <td><?php echo date('Y/m/d'); echo ','.date('l') ?>
+                    </td>
+                    <td>{{ $TotalInvestValue }}$</td>
+                    <td>{{ $TotalInvestProfit }}$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- A table that shows the total protfolio values and profits relating to the selected customer. -->
         <h2>{{$customer['name']}}'s Total Portfolio</h2>
         <table class="table table-striped table-bordered table-hover">
             <thead>
