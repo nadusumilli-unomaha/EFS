@@ -101,12 +101,14 @@ class InvestmentController extends Controller
         $investment= new Investment($request->all());
         $investment=Investment::find($id);
         $investment->update($request->all());
-        return redirect('investments');
+        return redirect('customers/'.$investment->customer_id);
     }
 
     public function destroy($id)
     {
+        $investment=Investment::find($id);
+        $cust = $investment->customer_id;
         Investment::find($id)->delete();
-        return redirect('investments');
+        return redirect('customers/'.$cust);
     }
 }

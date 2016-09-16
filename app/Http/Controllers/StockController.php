@@ -103,12 +103,14 @@ class StockController extends Controller
         $stock= new Stock($request->all());
         $stock=Stock::find($id);
         $stock->update($request->all());
-        return redirect('stocks');
+        return redirect('customers/'.$stock->customer_id);
     }
 
     public function destroy($id)
     {
+        $stock=Stock::find($id);
+        $cust = $stock->customer_id;
         Stock::find($id)->delete();
-        return redirect('stocks');
+        return redirect('customers/'.$cust);
     }
 }
